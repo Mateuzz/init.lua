@@ -1,0 +1,32 @@
+{
+	"Lua.workspace.library": [
+		"/usr/share/nvim/runtime/"
+	],
+	
+    "suggest.completionItemKindLabels": {
+        "variable": "\uf0ad",
+        "constant": "\ueb51",
+        "field": "\uf171",
+        "property": "\uf171",
+        "class": "\uf0c7",
+        "struct": "\ue7a1",
+        "function": "\ue79b",
+        "method": "\uea8c",
+        "text": "\ue612",
+        "enum": "\uf435",
+        "enumMember": "\uf02b"
+    },
+    
+    "coc-class-css.languages": [
+        "html",
+        "blade",
+        "js",
+        "javascript",
+        "php",
+        "vue",
+        "javascriptreact"
+    ],
+    "html.format.wrapLineLength": 100,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+}
