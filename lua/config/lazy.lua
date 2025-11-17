@@ -104,6 +104,7 @@ vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
 vim.cmd('au! FileType php  set indentexpr= | set cindent')
 vim.cmd('au! FileType php  set syntax=php')
+vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
 
 keyset('n', '<c-j>', '<C-W>j')
 keyset('n', '<c-h>', '<C-W>h')
