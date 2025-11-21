@@ -73,6 +73,9 @@ vim.o.mouse = 'a'
 vim.o.background = 'dark'
 vim.opt.iskeyword:append("-")
 vim.opt.tags:append("./tags")
+vim.o.grepprg = 'rg --vimgrep --no-heading'
+vim.o.grepformat = '%f:%l:%c:%m'
+
 
 local keyset = vim.keymap.set
 
@@ -89,23 +92,10 @@ keyset('t', '<esc>', [[<c-\><c-n>]])
 keyset('i', '<c-D>', 'X<esc>lbce')
 keyset('i', '<c-BS>', '<C-W>')
 
-local groupGeneral = vim.api.nvim_create_augroup('General Settings', { clear = true })
-
-vim.api.nvim_create_autocmd('FileType', {
-	pattern = { '*.blade' },
-	callback = function() 
-		vim.cmd[[set filetype=php]]
-		vim.cmd[[set syntax=php]]
-	end,
-	group = groupGeneral
-})
-
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
-
-vim.cmd('au! FileType php  set indentexpr= | set cindent')
-vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
-vim.cmd('au! BufRead,BufNewFile *.blade* set filetype=blade | set syntax=html')
+vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr=')
+vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
 
 keyset('n', '<c-j>', '<C-W>j')
 keyset('n', '<c-h>', '<C-W>h')
@@ -144,9 +134,6 @@ keyset('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<cr>')
 keyset('n', '<leader>gd ', '<cmd>Gitsigns toggle_deleted<cr>')
 keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
 keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
-
-vim.o.grepprg = 'rg --vimgrep --no-heading'
-vim.o.grepformat = '%f:%l:%c:%m'
 
 -- Setup lazy.nvim
 require("lazy").setup({
