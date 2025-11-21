@@ -32,8 +32,8 @@ return {
 
 		-- Make <CR> to accept selected completion item or notify coc.nvim to format
 		-- <C-g>u breaks current undo, please make your own choice
-		keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-		keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+		keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "<tab>"]], opts)
+		-- keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
 		-- Use <c-j> to trigger snippets
 		keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
@@ -44,6 +44,11 @@ return {
 		-- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
 		keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 		keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
+
+		vim.cmd([[
+			nmap <silent> <C-d> <Plug>(coc-cursors-word)
+			xmap <silent> <C-d> <Plug>(coc-cursors-range)
+		]])
 
 		-- GoTo code navigation
 		keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
