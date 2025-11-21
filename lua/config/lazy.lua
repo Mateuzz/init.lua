@@ -3,7 +3,7 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filte = blob:none", "--branch=stable", lazyrepo, lazypath })
+  local out = vim.fn.system({ "git", "clone", "--branch=stable", lazyrepo, lazypath })
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
@@ -102,9 +102,10 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
+
 vim.cmd('au! FileType php  set indentexpr= | set cindent')
-vim.cmd('au! FileType php  set syntax=php')
-vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
+vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
+vim.cmd('au! BufRead,BufNewFile *.blade* set filetype=blade | set syntax=html')
 
 keyset('n', '<c-j>', '<C-W>j')
 keyset('n', '<c-h>', '<C-W>h')
@@ -132,8 +133,8 @@ keyset('n', '<c-q>', '<cmd>q<cr>')
 keyset('n', '<c-5>', '<cmd>qa!<cr>')
 keyset('n', '<c-4>', '<cmd>qa<cr>')
 keyset('n', '<c-3>', '<cmd>wqa!<cr>')
-keyset('n', '<c-2>', '<cmd>wa<cr>')
-keyset('n', '<c-1>', '<cmd>w<cr>')
+keyset({'n', 'i'}, '<c-2>', '<cmd>wa<cr>')
+keyset({'n', 'i'}, '<c-1>', '<cmd>w<cr>')
 
 keyset('n', '<leader>cd', '<cmd>cd %:h<cr>')
 

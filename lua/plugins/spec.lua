@@ -44,11 +44,11 @@ return {
 			local key = require('telescope.builtin')
 			local keyset = vim.keymap.set
 
-			keyset('n', '<space>f', key.find_files, { desc = 'Telescope Find Files ' })
+			keyset('n', '<space>f', function() key.find_files({ no_ignore = true }) end, { desc = 'Telescope Find Files ' })
 			keyset('n', '<space>r', key.live_grep, { desc = 'Telescope Live Grep ' })
 			keyset('n', '<space>g', key.git_files, { desc = 'Telescope Git Files ' })
 			keyset('n', '<space>u', key.oldfiles, { desc = 'Telescope Old Files ' })
-			keyset('n', '<space>z', telescope.extensions.zoxide.list, { desc = 'Telescope Old Files ' })
+			keyset('n', '<space>z', telescope.extensions.zoxide.list, { desc = 'Telescope Zoxide' })
 
 		end
 	},
@@ -104,6 +104,14 @@ return {
 		keys = {
 			{'<c-n>', '<cmd>NvimTreeToggle<CR>'}
 		}
+	},
+	{
+		'https://github.com/ThePrimeagen/harpoon',
+		branch = 'harpoon2',
+		config = function()
+			local harpoon = require("harpoon").setup()
+			vim.keymap.set("n", "<space>m", function() harpoon:list():add() end)
+			vim.keymap.set("n", "<space>y", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+		end
 	}
-
 }
