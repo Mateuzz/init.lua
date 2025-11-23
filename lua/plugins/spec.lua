@@ -16,9 +16,6 @@ return {
 		'https://github.com/MagicDuck/grug-far.nvim'
 	},
 	{
-		'https://github.com/justinmk/vim-sneak'
-	},
-	{
 		'https://github.com/puremourning/vimspector'
 	},
 	{

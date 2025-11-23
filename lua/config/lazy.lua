@@ -75,7 +75,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.tags:append("./tags")
 vim.o.grepprg = 'rg --vimgrep --no-heading'
 vim.o.grepformat = '%f:%l:%c:%m'
-
+vim.o.guicursor = 'n-v-c:block-cursor/lCursor'
 
 local keyset = vim.keymap.set
 
@@ -119,12 +119,12 @@ keyset('n', '<leader>vi', '<cmd>e  $MYVIMRC<cr>')
 keyset('n', '<leader>;', 'A;')
 keyset('i', '<leader>;', '<esc>A;')
 
-keyset('n', '<c-q>', '<cmd>q<cr>')
-keyset('n', '<c-5>', '<cmd>qa!<cr>')
-keyset('n', '<c-4>', '<cmd>qa<cr>')
-keyset('n', '<c-3>', '<cmd>wqa!<cr>')
-keyset('n', '<c-2>', '<cmd>wa<cr>')
-keyset('n', '<c-1>', '<cmd>w<cr>')
+keyset({'n', 'i'}, '<c-q>', '<cmd>q<cr>')
+keyset({'n', 'i'}, '<c-5>', '<cmd>qa!<cr>')
+keyset({'n', 'i'}, '<c-4>', '<cmd>qa<cr>')
+keyset({'n', 'i'}, '<c-3>', '<cmd>wqa!<cr>')
+keyset({'n', 'i'}, '<c-2>', '<cmd>wa<cr>')
+keyset({'n', 'i'}, '<c-1>', '<cmd>w<cr>')
 
 keyset('n', '<leader>cd', '<cmd>cd %:h<cr>')
 
@@ -134,6 +134,9 @@ keyset('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<cr>')
 keyset('n', '<leader>gd ', '<cmd>Gitsigns toggle_deleted<cr>')
 keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
 keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
+
+keyset('n', '<leader>ph', function() vim.bo.filetype = 'php' end )
+keyset('n', '<leader>ht', function() vim.bo.filetype = 'html' end )
 
 -- Setup lazy.nvim
 require("lazy").setup({
