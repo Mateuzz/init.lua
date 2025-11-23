@@ -1,11 +1,4 @@
 return {
-	-- {
-	-- 	'https://github.com/Raimondi/delimitMate'
-	-- },
-	-- {
-	-- 	'windwp/nvim-autopairs',
-	-- 	opts = {},
-	-- },
 	{
 		'https://github.com/tpope/vim-surround',
 	},

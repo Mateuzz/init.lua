@@ -75,7 +75,10 @@ vim.opt.iskeyword:append("-")
 vim.opt.tags:append("./tags")
 vim.o.grepprg = 'rg --vimgrep --no-heading'
 vim.o.grepformat = '%f:%l:%c:%m'
-vim.o.guicursor = 'n-v-c:block-cursor/lCursor'
+vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
+vim.o.guifont = 'Droid Sans Mono:h11'
+
+vim.cmd([[au! InsertEnter highlight Cursor guibg=lightgreen ]])
 
 local keyset = vim.keymap.set
 
@@ -106,7 +109,7 @@ keyset('n', '<esc>', '<cmd>noh<cr>', { silent = true })
 keyset('n', '>', '>>')
 keyset('n', '<', '<<')
 
-keyset('n', '<jeader>op', '<cmd>copen<cr>')
+keyset('n', '<leader>op', '<cmd>copen<cr>')
 keyset('n', '<leader>co', '<cmd>cclose<cr>')
 
 keyset('n', '<a-2>', '<cmd>bn<cr>')
@@ -116,13 +119,13 @@ keyset('n', '<a-0>', '<cmd>cp<cr>')
 
 keyset('n', '<leader>vi', '<cmd>e  $MYVIMRC<cr>')
 
-keyset('n', '<leader>;', 'A;')
-keyset('i', '<leader>;', '<esc>A;')
+keyset('n', '<c-;>', 'A;')
+keyset('i', '<c-;>', '<esc>A;')
 
 keyset({'n', 'i'}, '<c-q>', '<cmd>q<cr>')
-keyset({'n', 'i'}, '<c-5>', '<cmd>qa!<cr>')
-keyset({'n', 'i'}, '<c-4>', '<cmd>qa<cr>')
-keyset({'n', 'i'}, '<c-3>', '<cmd>wqa!<cr>')
+keyset('n', '<c-5>', '<cmd>qa!<cr>')
+keyset('n', '<c-4>', '<cmd>qa<cr>')
+keyset('n', '<c-3>', '<cmd>wqa!<cr>')
 keyset({'n', 'i'}, '<c-2>', '<cmd>wa<cr>')
 keyset({'n', 'i'}, '<c-1>', '<cmd>w<cr>')
 
@@ -135,7 +138,12 @@ keyset('n', '<leader>gd ', '<cmd>Gitsigns toggle_deleted<cr>')
 keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
 keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
 
-keyset('n', '<leader>ph', function() vim.bo.filetype = 'php' end )
+keyset('n', '<leader>ph',
+function()
+	vim.bo.filetype = 'php'
+	vim.bo.syntax = 'html'
+end )
+
 keyset('n', '<leader>ht', function() vim.bo.filetype = 'html' end )
 
 -- Setup lazy.nvim

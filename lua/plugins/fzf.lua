@@ -5,7 +5,6 @@ return {
   -- or if using mini.icons/mini.nvim
   -- dependencies = { "nvim-mini/mini.icons" },
   opts = {},
-  
 
   config = function()
 	  local kset = vim.keymap.set
