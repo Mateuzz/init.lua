@@ -56,7 +56,6 @@ return {
 		keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 		keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
 
-
 		-- Use K to show documentation in preview window
 		function _G.show_docs()
 			local cw = vim.fn.expand('<cword>')
