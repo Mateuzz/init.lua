@@ -44,7 +44,12 @@ return {
 	},
 	{
 		'https://github.com/nvim-tree/nvim-tree.lua',
-		opts = {},
+		lazy = false,
+		opts = {
+			diagnostics = {
+				enable = true,
+			}
+		},
 		keys = {
 			{ '<c-n>', '<cmd>NvimTreeToggle<CR>' },
 			{ '<c-m>', '<cmd>NvimTreeToggle %:h<CR>' }

@@ -11,4 +11,8 @@ return {
 		'nvim-mini/mini.align',
 		opts = {},
 	},
+	{
+		'https://github.com/nvim-mini/mini.tabline',
+		opts = {}
+	}
 }
