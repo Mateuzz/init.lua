@@ -160,7 +160,11 @@ function()
 	vim.bo.indentexpr = ''
 end )
 
-keyset('n', '<leader>ht', function() vim.bo.filetype = 'html' end )
+keyset('n', '<leader>ht',
+function() 
+	vim.bo.filetype = 'html'
+	vim.bo.syntax = 'html'
+end )
 keyset('n', '<leader>js', function() vim.bo.filetype = 'javascript' end )
 
 -- Setup lazy.nvim
