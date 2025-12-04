@@ -1,7 +1,7 @@
 return {
 	{
 		'https://github.com/Raimondi/delimitMate',
-		config = function()
+		config = function ()
 			vim.g.delimitMate_matchpairs = '(:),[:],{:}'
 		end
 	},

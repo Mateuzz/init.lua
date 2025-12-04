@@ -47,8 +47,12 @@ return {
 	},
 	{
 		'https://github.com/nvim-tree/nvim-tree.lua',
+		lazy = false,
 		opts = {
-			disable_netrw = true
+			disable_netrw = true,
+			diagnostics = {
+				enable = true,
+			}
 		},
 		keys = {
 			{ '<c-n>', '<cmd>NvimTreeToggle<CR>' },

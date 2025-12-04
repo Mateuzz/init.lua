@@ -100,7 +100,9 @@ keyset('i', '<c-BS>', '<C-W>')
 
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
-vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr=')
+-- Tree sitter enabled, does not need this
+-- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr= | TSEnable indent')
+vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=html')
 vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
 
 keyset('n', '<c-j>', '<C-W>j')
@@ -141,10 +143,21 @@ keyset('n', '<leader>gd', '<cmd>Gitsigns toggle_deleted<cr>')
 keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
 keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
 
-keyset('n', '<leader>ph',
+keyset('n', "<c-'>", '<cmd>tabedit<<cr>')
+
+keyset('n', '<leader>php',
+function()
+	vim.bo.filetype = 'php'
+	-- vim.bo.cindent = true
+	-- vim.bo.indentexpr = ''
+end )
+
+keyset('n', '<leader>pht',
 function()
 	vim.bo.filetype = 'php'
 	vim.bo.syntax = 'html'
+	vim.bo.cindent = true
+	vim.bo.indentexpr = ''
 end )
 
 keyset('n', '<leader>ht', function() vim.bo.filetype = 'html' end )
