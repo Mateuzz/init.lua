@@ -9,7 +9,10 @@ return {
 		'https://github.com/MagicDuck/grug-far.nvim'
 	},
 	{
-		'https://github.com/puremourning/vimspector'
+		'https://github.com/puremourning/vimspector',
+		config = function()
+			vim.g.vimspector_enable_mappings = 'HUMAN'
+		end
 	},
 	{
 		'https://github.com/Mateuzz/dark-obsidian.vim',
@@ -44,7 +47,9 @@ return {
 	},
 	{
 		'https://github.com/nvim-tree/nvim-tree.lua',
-		opts = {},
+		opts = {
+			disable_netrw = true
+		},
 		keys = {
 			{ '<c-n>', '<cmd>NvimTreeToggle<CR>' },
 			{ '<c-m>', '<cmd>NvimTreeToggle %:h<CR>' }

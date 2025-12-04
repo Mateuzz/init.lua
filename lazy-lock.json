@@ -1,10 +1,10 @@
 {
-  "coc.nvim": { "branch": "master", "commit": "096b85580955e9a0bff698f4b53715ff08aa1c3f" },
+  "coc.nvim": { "branch": "master", "commit": "5af156b2bff6933e190ac1cd9c7e72bba72c0211" },
   "dark-obsidian.vim": { "branch": "master", "commit": "c07b97e091a5c12ef971987f8b4792d5173924be" },
   "delimitMate": { "branch": "master", "commit": "becbd2d353a2366171852387288ebb4b33a02487" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "emmet-vim": { "branch": "master", "commit": "e98397144982d1e75b20d94d55a82de3ec8f648d" },
-  "fzf-lua": { "branch": "main", "commit": "20f2fca16ee5c30ce1eedfe0286637fc31da2b90" },
+  "fzf-lua": { "branch": "main", "commit": "9a0704e8af8f8442110ff22a83b5608366b235df" },
   "gitsigns.nvim": { "branch": "main", "commit": "cdafc320f03f2572c40ab93a4eecb733d4016d07" },
   "grug-far.nvim": { "branch": "main", "commit": "b58b2d65863f4ebad88b10a1ddd519e5380466e0" },
   "harpoon": { "branch": "harpoon2", "commit": "87b1a3506211538f460786c23f98ec63ad9af4e5" },

@@ -1,6 +1,9 @@
 return {
 	{
-		'https://github.com/Raimondi/delimitMate'
+		'https://github.com/Raimondi/delimitMate',
+		config = function()
+			vim.g.delimitMate_matchpairs = '(:),[:],{:}'
+		end
 	},
 	-- {
 	-- 	'windwp/nvim-autopairs',

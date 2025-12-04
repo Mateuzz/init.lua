@@ -22,6 +22,9 @@ vim.g.maplocalleader = "\\"
 vim.g.t_vb = ''
 vim.g.c_no_curly_error = true
 vim.g.shell = '/bin/zsh'
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.vimspector_enable_mappings = 'HUMAN'
 
 vim.o.showmode = false
 vim.o.errorbells = false
@@ -67,8 +70,8 @@ vim.o.shortmess = 'cFWlat'
 vim.o.pumheight = 10
 vim.o.writebackup = true
 vim.o.backup = true
-vim.o.dir = '/tmp/nvim/dir'
-vim.o.backupdir = '/tmp/nvim/bdir'
+vim.o.dir = '/home/altosoft/.local/share/nvim/dir'
+vim.o.backupdir = '/home/altosoft/.local/share/nvim/bdir'
 vim.o.mouse = 'a'
 vim.o.background = 'dark'
 vim.opt.iskeyword:append("-")
@@ -134,7 +137,7 @@ keyset('n', '<leader>cd', '<cmd>cd %:h<cr>')
 keyset('i', '<s-cr>', '<cr>', { remap = true })
 
 keyset('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<cr>')
-keyset('n', '<leader>gd ', '<cmd>Gitsigns toggle_deleted<cr>')
+keyset('n', '<leader>gd', '<cmd>Gitsigns toggle_deleted<cr>')
 keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
 keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
 
@@ -145,6 +148,7 @@ function()
 end )
 
 keyset('n', '<leader>ht', function() vim.bo.filetype = 'html' end )
+keyset('n', '<leader>js', function() vim.bo.filetype = 'javascript' end )
 
 -- Setup lazy.nvim
 require("lazy").setup({
