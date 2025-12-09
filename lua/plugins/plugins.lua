@@ -12,12 +12,27 @@ return {
 		'https://github.com/puremourning/vimspector',
 		config = function()
 			vim.g.vimspector_enable_mappings = 'HUMAN'
+			local key = vim.keymap.set 
+
+			key('n', '<leader>ro', '<cmd>VimspectorReset<cr>')
+
+			vim.cmd[[
+				nmap <Leader>di <Plug>VimspectorBalloonEval
+				xmap <Leader>di <Plug>VimspectorBalloonEval
+			]]
+
 		end
 	},
+	-- {
+	-- 	'https://github.com/Mateuzz/dark-obsidian.vim',
+	-- },
+	-- {
+	-- 	'https://github.com/Mofiqul/vscode.nvim'
+	-- },
 	{
-		'https://github.com/Mateuzz/dark-obsidian.vim',
+		'https://github.com/rebelot/kanagawa.nvim',
 		config = function()
-			vim.cmd [[colorscheme rust]]
+			vim.cmd [[colorscheme kanagawa]]
 		end
 	},
 	{

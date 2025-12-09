@@ -70,8 +70,8 @@ vim.o.shortmess = 'cFWlat'
 vim.o.pumheight = 10
 vim.o.writebackup = true
 vim.o.backup = true
-vim.o.dir = '/home/altosoft/.local/share/nvim/dir'
-vim.o.backupdir = '/home/altosoft/.local/share/nvim/bdir'
+vim.o.dir = '/home/mateus/.local/share/nvim/dir'
+vim.o.backupdir = '/home/mateus/.local/share/nvim/bdir'
 vim.o.mouse = 'a'
 vim.o.background = 'dark'
 vim.opt.iskeyword:append("-")
@@ -91,7 +91,7 @@ keyset('n', 'cc', 'C')
 keyset('n', 'C', 'cc')
 keyset('n', '<c-enter>', '<esc>o')
 keyset({'n', 'v'}, '<c-c>', '"+y"')
-keyset('n', '<c-v>', '"+p"')
+keyset({'i', 'n'}, '<c-v>', '"+p"')
 keyset('i', 'jk', '<esc>')
 keyset('t', 'jk', [[<c-\><c-n>]])
 keyset('t', '<esc>', [[<c-\><c-n>]])
