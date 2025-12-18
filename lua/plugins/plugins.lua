@@ -23,17 +23,20 @@ return {
 
 		end
 	},
-	-- {
-	-- 	'https://github.com/Mateuzz/dark-obsidian.vim',
-	-- },
-	-- {
-	-- 	'https://github.com/Mofiqul/vscode.nvim'
-	-- },
+	{
+		'https://github.com/Mateuzz/dark-obsidian.vim',
+	},
+	{
+		'https://github.com/Mofiqul/vscode.nvim'
+	},
+	{
+		'https://github.com/ydkulks/cursor-dark.nvim',
+		config = function()
+			vim.cmd [[colorscheme cursor-dark]]
+		end
+	},
 	{
 		'https://github.com/rebelot/kanagawa.nvim',
-		config = function()
-			vim.cmd [[colorscheme kanagawa]]
-		end
 	},
 	{
 		'https://github.com/mbbill/undotree'
