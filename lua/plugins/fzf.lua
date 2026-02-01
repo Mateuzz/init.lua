@@ -23,5 +23,6 @@ return {
 		kset('n', '<space>r', function() fzf.live_grep() end)
 		kset('n', '<space>b', function() fzf.buffers() end)
 		kset('n', '<space>z', function() fzf.zoxide() end)
+		kset('n', '<space>k', function() fzf.lgrep_curbuf() end)
 	end
 }

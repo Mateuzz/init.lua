@@ -26,7 +26,10 @@
         "vue",
         "javascriptreact"
     ],
-    "html.format.wrapLineLength": 300,
+
+	"java.home": "/usr/lib/jvm/default",
+
+    "html.format.wrapLineLength": 100,
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }

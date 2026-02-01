@@ -1,14 +1,22 @@
+if vim.g.neovide then
+	vim.g.neovide_cursor_animation_length = 0.01
+	vim.g.neovide_cursor_short_animation_length = 0.04
+	vim.g.neovide_cursor_trail_size = 0.1
+	vim.g.neovide_refresh_rate = 100
+	vim.g.neovide_scroll_animation_length = 0.04
+end
+
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
-
-require("config.lazy")
-
 vim.g.t_vb = ''
 vim.g.c_no_curly_error = true
 vim.g.shell = '/bin/zsh'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.vimspector_enable_mappings = 'HUMAN'
+vim.g.db_ui_auto_execute_table_helpers = 1
+
+require("config.lazy")
 
 vim.o.showmode = false
 vim.o.errorbells = false
@@ -17,6 +25,8 @@ vim.o.showmatch = false
 vim.o.expandtab = false
 vim.o.autochdir = false
 vim.o.wrap = false
+-- vim.o.linebreak = true
+-- vim.o.showbreak = '↪ '
 vim.o.termguicolors = true
 vim.o.number = true
 vim.o.relativenumber = true
@@ -62,16 +72,35 @@ vim.opt.iskeyword:append("-")
 vim.opt.tags:append("./tags")
 vim.o.grepprg = 'rg --vimgrep --no-heading'
 vim.o.grepformat = '%f:%l:%c:%m'
-vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
+-- vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
 vim.o.clipboard = 'unnamedplus'
-vim.o.guifont = 'Droid Sans Mono:h11'
-
-vim.cmd([[au! InsertEnter highlight Cursor guibg=lightgreen ]])
+vim.o.guifont = 'Adwaita Mono:h11'
 
 local keyset = vim.keymap.set
 
+-- Navigate by screen lines with j and k in Normal mode
+
+-- vim.keymap.set('n', 'j', function()
+--   if vim.v.count > 0 then
+--     return 'j'
+--   else
+--     return 'gj'
+--   end
+-- end, { expr = true })
+--
+-- vim.keymap.set('n', 'k', function()
+--   if vim.v.count > 0 then
+--     return 'k'
+--   else
+--     return 'gk'
+--   end
+-- end, { expr = true })
+
 keyset('n', 'dd', 'D')
-keyset('n', 'D', 'dd')
+-- keyset('n', 'D', 'dd')
+vim.keymap.set('n', 'D', function()
+  vim.cmd('normal! dd')
+end, { silent = true })
 keyset('n', 'cc', 'C')
 keyset('n', 'C', 'cc')
 keyset('n', '<c-enter>', '<esc>o')
@@ -88,9 +117,11 @@ keyset('i', '<c-BS>', '<C-W>')
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
 -- Tree sitter enabled, does not need this
+-- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr= | TSEnable indent')
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=html')
-vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
+-- vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
+-- vim.cmd[[ au! FileType php  set indentexpr= | set cindent | set filetype=php | set syntax=php BufNewFile *.php* setlocal filetype=php | setlocal syntax=php ]]
 
 keyset('n', '<c-j>', '<C-W>j')
 keyset('n', '<c-h>', '<C-W>h')
