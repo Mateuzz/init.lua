@@ -48,25 +48,25 @@ return {
 			vim.cmd [[colorscheme vscode]]
 		end
 	},
-	{
-		'https://github.com/nvim-neo-tree/neo-tree.nvim',
-		lazy = false,
-		dependencies = {
-			'https://github.com/MunifTanjim/nui.nvim',
-			'https://github.com/nvim-lua/plenary.nvim'
-		},
-		keys = {
-			{ '<c-n>', '<cmd>Neotree toggle position=left<CR>' },
-			{ '<c-m>', '<cmd>Neotree position=current<CR>' },
-		},
-		opts = {
-			filesystem = {
-				window = {
-					position = 'current'
-				}
-			}
-		},
-	},
+	-- {
+	-- 	'https://github.com/nvim-neo-tree/neo-tree.nvim',
+	-- 	lazy = false,
+	-- 	dependencies = {
+	-- 		'https://github.com/MunifTanjim/nui.nvim',
+	-- 		'https://github.com/nvim-lua/plenary.nvim'
+	-- 	},
+	-- 	keys = {
+	-- 		{ '<c-n>', '<cmd>Neotree toggle position=left<CR>' },
+	-- 		{ '<c-m>', '<cmd>Neotree position=current<CR>' },
+	-- 	},
+	-- 	opts = {
+	-- 		filesystem = {
+	-- 			window = {
+	-- 				position = 'current'
+	-- 			}
+	-- 		}
+	-- 	},
+	-- },
 	{
 		'https://github.com/ydkulks/cursor-dark.nvim',
 	},
@@ -100,22 +100,23 @@ return {
 	},
 	{
 
-	}
-	-- {
-	-- 	'https://github.com/nvim-tree/nvim-tree.lua',
-	-- 	lazy = false,
-	-- 	opts = {
-	-- 		disable_netrw = true,
-	-- 		diagnostics = {
-	-- 			enable = true,
-	-- 		}
-	-- 	},
-	-- 	keys = {
-	-- 		{ '<c-n>', '<cmd>NvimTreeToggle<CR>' },
-	-- 		{ '<c-m>', '<cmd>NvimTreeToggle %:h<CR>' },
-	-- 		{ '<c-,>', '<cmd>NvimTreeFocus <CR>' },
-	-- 	}
-	-- },
+	},
+	{
+		'https://github.com/nvim-tree/nvim-tree.lua',
+		lazy = false,
+		opts = {
+			disable_netrw = true,
+			diagnostics = {
+				enable = true,
+			}
+		},
+		keys = {
+			{ '<c-n>', '<cmd>NvimTreeToggle<CR>' },
+			{ '<c-m>', '<cmd>NvimTreeToggle %:h<CR>' },
+			{ '<c-,>', '<cmd>NvimTreeFocus <CR>' },
+			{ '<c-ç>', "<cmd> lua require('nvim-tree.api').tree.toggle({current_window = true})<CR>" },
+		}
+	},
 	-- {
 	-- 	"ThePrimeagen/harpoon",
 	-- 	branch = "harpoon2",

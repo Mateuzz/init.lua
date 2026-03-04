@@ -49,7 +49,7 @@ vim.o.lazyredraw = true
 vim.o.confirm = true
 vim.o.encoding = 'UTF-8'
 vim.o.smarttab = true
-vim.o.shiftwidth = 4
+vim.o.shiftwidth = 0
 vim.o.tabstop = 4
 vim.o.softtabstop = -1
 vim.o.backspace = 'indent,eol,start'
@@ -72,6 +72,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.tags:append("./tags")
 vim.o.grepprg = 'rg --vimgrep --no-heading'
 vim.o.grepformat = '%f:%l:%c:%m'
+vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 -- vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
 vim.o.clipboard = 'unnamedplus'
 vim.o.guifont = 'Adwaita Mono:h11'

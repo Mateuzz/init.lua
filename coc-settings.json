@@ -29,7 +29,11 @@
 
 	"java.home": "/usr/lib/jvm/default",
 
-    "html.format.wrapLineLength": 100,
+	"Lua.workspace.userThirdParty": ["~/.local/share/nvim/lazy/"],
+
+    "html.format.wrapLineLength": 300,
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+	"intelephense.files.maxSize": 2000000,
 }
