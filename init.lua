@@ -79,8 +79,7 @@ vim.o.guifont = 'Adwaita Mono:h11'
 
 local keyset = vim.keymap.set
 
--- Navigate by screen lines with j and k in Normal mode
-
+-- Navigate by screen lines with j and k in Normal mode (for wrap mode)
 -- vim.keymap.set('n', 'j', function()
 --   if vim.v.count > 0 then
 --     return 'j'
@@ -185,3 +184,6 @@ function()
 	vim.bo.syntax = 'html'
 end )
 keyset('n', '<leader>js', function() vim.bo.filetype = 'javascript' end )
+
+-- Close all buffers except this
+keyset('n', '<leader>re', '<cmd>:%bd|e#|bd#<CR>')

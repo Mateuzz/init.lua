@@ -44,8 +44,17 @@ return {
 	},
 	{
 		'https://github.com/Mofiqul/vscode.nvim',
+	},
+	{
+		'https://github.com/sainnhe/everforest',
+	},
+	{
+		'https://github.com/morhetz/gruvbox'
+	},
+	{
+		'https://github.com/sainnhe/gruvbox-material',
 		config = function()
-			vim.cmd [[colorscheme vscode]]
+			vim.cmd [[colorscheme gruvbox-material]]
 		end
 	},
 	-- {
