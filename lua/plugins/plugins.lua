@@ -39,24 +39,6 @@ return {
 			]]
 		end
 	},
-	{
-		'https://github.com/Mateuzz/dark-obsidian.vim',
-	},
-	{
-		'https://github.com/Mofiqul/vscode.nvim',
-	},
-	{
-		'https://github.com/sainnhe/everforest',
-	},
-	{
-		'https://github.com/morhetz/gruvbox'
-	},
-	{
-		'https://github.com/sainnhe/gruvbox-material',
-		config = function()
-			vim.cmd [[colorscheme gruvbox-material]]
-		end
-	},
 	-- {
 	-- 	'https://github.com/nvim-neo-tree/neo-tree.nvim',
 	-- 	lazy = false,
@@ -77,19 +59,7 @@ return {
 	-- 	},
 	-- },
 	{
-		'https://github.com/ydkulks/cursor-dark.nvim',
-	},
-	{
-		'https://github.com/rebelot/kanagawa.nvim',
-	},
-	{
 		'https://github.com/mbbill/undotree'
-	},
-	{
-		'https://github.com/tpope/vim-fugitive'
-	},
-	{
-		'https://github.com/sindrets/diffview.nvim'
 	},
 	{
 		'https://github.com/lewis6991/gitsigns.nvim',

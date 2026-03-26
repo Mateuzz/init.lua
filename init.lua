@@ -20,7 +20,7 @@ require("config.lazy")
 
 vim.o.showmode = false
 vim.o.errorbells = false
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.showmatch = false
 vim.o.expandtab = false
 vim.o.autochdir = false
@@ -75,7 +75,9 @@ vim.o.grepformat = '%f:%l:%c:%m'
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 -- vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
 vim.o.clipboard = 'unnamedplus'
-vim.o.guifont = 'Adwaita Mono:h11'
+-- vim.o.guifont = 'Adwaita Mono:h11'
+ -- vim.o.guifont = 'Monaco:h12'
+ vim.o.guifont = 'Fantasque Sans Mono:h13'
 
 local keyset = vim.keymap.set
 
@@ -116,10 +118,10 @@ keyset('i', '<c-BS>', '<C-W>')
 
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
--- Tree sitter enabled, does not need this
+
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
--- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr= | TSEnable indent')
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=html')
+-- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php | set cindent | set indentexpr= | TSEnable indent')
 -- vim.cmd('au! FileType blade  set filetype=html | set syntax=php ')
 -- vim.cmd[[ au! FileType php  set indentexpr= | set cindent | set filetype=php | set syntax=php BufNewFile *.php* setlocal filetype=php | setlocal syntax=php ]]
 
