@@ -36,8 +36,6 @@
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 
 	"intelephense.files.maxSize": 2000000,
-	
-	"clangd.arguments": [
-		"--function-arg-placeholders=0"
-	]
+
+	"laravel.environment.phpPath": "/usr/bin/php84",
 }

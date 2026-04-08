@@ -16,12 +16,10 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.vimspector_enable_mappings = 'HUMAN'
 vim.g.db_ui_auto_execute_table_helpers = 1
 
+
 require("config.lazy")
 
 vim.o.showmode = false
-vim.o.errorbells = false
-vim.o.cursorline = false
-vim.o.showmatch = false
 vim.o.expandtab = false
 vim.o.autochdir = false
 vim.o.wrap = false
@@ -45,9 +43,10 @@ vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
 vim.o.foldcolumn = 'auto'
 vim.o.hidden = true
-vim.o.lazyredraw = true
+-- vim.o.lazyredraw = true
 vim.o.confirm = true
 vim.o.encoding = 'UTF-8'
+vim.o.cursorline = true
 vim.o.smarttab = true
 vim.o.shiftwidth = 0
 vim.o.tabstop = 4
@@ -77,7 +76,8 @@ vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 vim.o.clipboard = 'unnamedplus'
 -- vim.o.guifont = 'Adwaita Mono:h11'
  -- vim.o.guifont = 'Monaco:h12'
- vim.o.guifont = 'Fantasque Sans Mono:h13'
+  vim.o.guifont = 'Fantasque Sans Mono:h13'
+  -- vim.o.guifont = 'Lilex:h12'
 
 local keyset = vim.keymap.set
 
@@ -118,6 +118,10 @@ keyset('i', '<c-BS>', '<C-W>')
 
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
+
+vim.cmd[[
+	au FileType c,cpp TSBufDisable indent
+]]
 
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=html')
@@ -181,7 +185,7 @@ function()
 end )
 
 keyset('n', '<leader>ht',
-function() 
+function()
 	vim.bo.filetype = 'html'
 	vim.bo.syntax = 'html'
 end )

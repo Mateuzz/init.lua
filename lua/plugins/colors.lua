@@ -4,6 +4,9 @@ return {
 	},
 	{
 		'https://github.com/Mateuzz/dark-obsidian.vim',
+		config = function()
+			vim.cmd [[colorscheme rust]]
+		end
 	},
 	{
 		'https://github.com/Mofiqul/vscode.nvim',
@@ -25,9 +28,6 @@ return {
 	},
 	{
 		'projekt0n/github-nvim-theme',
-		config = function()
-			vim.cmd [[colorscheme github_dark_default]]
-		end
 	},
 	{
 		  "wtfox/jellybeans.nvim",

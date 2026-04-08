@@ -96,6 +96,45 @@ return {
 			{ '<c-ç>', "<cmd> lua require('nvim-tree.api').tree.toggle({current_window = true})<CR>" },
 		}
 	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
+	},
+	{
+		"LunarVim/bigfile.nvim",
+		opts = {
+			filesize = 3, -- size of the file in MiB, the plugin round file sizes to the closest MiB
+			pattern = { "*" }, -- autocmd pattern or function see <### Overriding the detection of big files>
+			features = { -- features to disable
+				"indent_blankline",
+				"illuminate",
+				"lsp",
+				"treesitter",
+				"syntax",
+				"matchparen",
+				"vimopts",
+				"filetype",
+			},
+		}
+	},
+	{
+		"cappyzawa/trim.nvim",
+		opts = {
+			trim_on_write = true,
+			highlight = false,
+		}
+	}
 	-- {
 	-- 	"ThePrimeagen/harpoon",
 	-- 	branch = "harpoon2",
