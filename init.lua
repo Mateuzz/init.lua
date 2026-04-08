@@ -63,8 +63,8 @@ vim.o.shortmess = 'cFWlat'
 vim.o.pumheight = 10
 vim.o.writebackup = true
 vim.o.backup = true
-vim.o.dir = '/home/mateus/.local/share/nvim/dir'
-vim.o.backupdir = '/home/mateus/.local/share/nvim/bdir'
+vim.o.dir = vim.fn.expand('~/.local/share/nvim/dir')
+vim.o.backupdir = vim.fn.expand('~/.local/share/nvim/bdir')
 vim.o.mouse = 'a'
 vim.o.background = 'dark'
 vim.opt.iskeyword:append("-")
