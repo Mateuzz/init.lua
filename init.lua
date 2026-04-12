@@ -6,6 +6,8 @@ if vim.g.neovide then
 	vim.g.neovide_scroll_animation_length = 0.04
 end
 
+local keyset = vim.keymap.set
+
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 vim.g.t_vb = ''
@@ -17,7 +19,14 @@ vim.g.vimspector_enable_mappings = 'HUMAN'
 vim.g.db_ui_auto_execute_table_helpers = 1
 
 
-require("config.lazy")
+if not vim.g.vscode then
+	require("config.lazy")
+
+	keyset('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<cr>')
+	keyset('n', '<leader>gd', '<cmd>Gitsigns toggle_deleted<cr>')
+	keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
+	keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
+end
 
 vim.o.showmode = false
 vim.o.expandtab = false
@@ -72,14 +81,13 @@ vim.opt.tags:append("./tags")
 vim.o.grepprg = 'rg --vimgrep --no-heading'
 vim.o.grepformat = '%f:%l:%c:%m'
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
--- vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
+vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
 vim.o.clipboard = 'unnamedplus'
 -- vim.o.guifont = 'Adwaita Mono:h11'
  -- vim.o.guifont = 'Monaco:h12'
   vim.o.guifont = 'Fantasque Sans Mono:h13'
   -- vim.o.guifont = 'Lilex:h12'
 
-local keyset = vim.keymap.set
 
 -- Navigate by screen lines with j and k in Normal mode (for wrap mode)
 -- vim.keymap.set('n', 'j', function()
@@ -119,9 +127,6 @@ keyset('i', '<c-BS>', '<C-W>')
 vim.cmd('cnoreabbrev E e')
 vim.cmd('filetype plugin indent on')
 
-vim.cmd[[
-	au FileType c,cpp TSBufDisable indent
-]]
 
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php')
 -- vim.cmd('au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=html')
@@ -161,11 +166,6 @@ keyset({'n', 'i'}, '<c-1>', '<cmd>w<cr>')
 keyset('n', '<leader>cd', '<cmd>cd %:h<cr>')
 
 keyset('i', '<s-cr>', '<cr>', { remap = true })
-
-keyset('n', '<leader>gl', '<cmd>Gitsigns toggle_linehl<cr>')
-keyset('n', '<leader>gd', '<cmd>Gitsigns toggle_deleted<cr>')
-keyset('n', '<leader>gw', '<cmd>Gitsigns toggle_word_diff<cr>')
-keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
 
 keyset('n', "<c-'>", '<cmd>tabedit<<cr>')
 

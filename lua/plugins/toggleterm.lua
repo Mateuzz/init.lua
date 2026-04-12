@@ -39,7 +39,6 @@ return {
 			end,
 		})
 
-
 		function _lazygit_toggle()
 			lazygit:toggle()
 		end
@@ -50,7 +49,7 @@ return {
 
 		local hereTerm = Terminal:new({
 			cmd = 'zsh',
-			direction = "horizontal",
+			direction = "float",
 			dir = '.',
 			close_on_exit = true,
 
