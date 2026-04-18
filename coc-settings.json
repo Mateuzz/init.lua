@@ -1,8 +1,8 @@
 {
 	"Lua.workspace.library": [
-		"/usr/share/nvim/runtime/"
+		"/usr/share/nvim/runtime/",
 	],
-	
+
     "suggest.completionItemKindLabels": {
         "variable": "\uf0ad",
         "constant": "\ueb51",
@@ -16,7 +16,7 @@
         "enum": "\uf435",
         "enumMember": "\uf02b"
     },
-    
+
     "coc-class-css.languages": [
         "html",
         "blade",

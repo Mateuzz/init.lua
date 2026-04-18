@@ -1,5 +1,8 @@
 return {
 	{
+		'nvim-lua/plenary.nvim',
+	},
+	{
 		'https://github.com/tpope/vim-surround',
 	},
 	{
@@ -78,9 +81,6 @@ return {
 		'nvim-tree/nvim-web-devicons'
 	},
 	{
-
-	},
-	{
 		'https://github.com/nvim-tree/nvim-tree.lua',
 		lazy = false,
 		opts = {
@@ -100,7 +100,9 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
-			-- add any options here
+			messages = {
+				view_search = false
+			}
 		},
 		dependencies = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

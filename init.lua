@@ -28,6 +28,7 @@ if not vim.g.vscode then
 	keyset('n', '<leader>gs', '<cmd>Gitsigns toggle_signs<cr>')
 end
 
+vim.cmd[[language pt_BR.utf8]]
 vim.o.showmode = false
 vim.o.expandtab = false
 vim.o.autochdir = false
@@ -42,9 +43,9 @@ vim.o.splitbelow = true
 vim.o.conceallevel = 3
 vim.o.splitright = true
 vim.o.inccommand = 'split'
+-- vim.o.incsearch = false
+-- vim.o.hlsearch = false
 vim.o.laststatus = 2
-vim.o.incsearch = true
-vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.ruler = true
@@ -52,7 +53,7 @@ vim.o.scrolloff = 2
 vim.o.sidescrolloff = 5
 vim.o.foldcolumn = 'auto'
 vim.o.hidden = true
--- vim.o.lazyredraw = true
+vim.o.lazyredraw = false
 vim.o.confirm = true
 vim.o.encoding = 'UTF-8'
 vim.o.cursorline = true
@@ -69,7 +70,7 @@ vim.o.signcolumn = 'auto'
 vim.o.colorcolumn = '90'
 vim.o.updatetime = 250
 vim.o.shortmess = 'cFWlat'
-vim.o.pumheight = 10
+vim.o.pumheight = 20
 vim.o.writebackup = true
 vim.o.backup = true
 vim.o.dir = vim.fn.expand('~/.local/share/nvim/dir')
@@ -83,10 +84,10 @@ vim.o.grepformat = '%f:%l:%c:%m'
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 vim.o.guicursor = 'n-v-c:block-cursor/lCursor,i:block-cursor/CursorInsert'
 vim.o.clipboard = 'unnamedplus'
--- vim.o.guifont = 'Adwaita Mono:h11'
- -- vim.o.guifont = 'Monaco:h12'
-  vim.o.guifont = 'Fantasque Sans Mono:h13'
-  -- vim.o.guifont = 'Lilex:h12'
+ vim.o.guifont = 'Adwaita Mono:h11'
+-- vim.o.guifont = 'Monaco:h12'
+--vim.o.guifont = 'Fantasque Sans Mono:h13'
+-- vim.o.guifont = 'Lilex:h12'
 
 
 -- Navigate by screen lines with j and k in Normal mode (for wrap mode)
