@@ -12,6 +12,7 @@ return {
 	},
 	{
 		'https://github.com/sindrets/diffview.nvim',
+		lazy = false,
 		keys = {
 			{ "<space>2", "<cmd>DiffviewOpen<cr>", desc = "Show Diff View" },
 			{ "<space>3", "<cmd>DiffviewClose<cr>", desc = "Close Diff View" },

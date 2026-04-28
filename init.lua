@@ -156,11 +156,13 @@ keyset('n', '<leader>vi', '<cmd>e  $MYVIMRC<cr>')
 
 keyset('n', '<c-;>', 'A;')
 keyset('i', '<c-;>', '<esc>A;')
+keyset('n', '<c-,>', 'A,')
+keyset('i', '<c-,>', '<esc>A,')
 
 keyset({'n', 'i'}, '<c-q>', '<cmd>q<cr>')
 keyset('n', '<c-5>', '<cmd>qa!<cr>')
 keyset('n', '<c-4>', '<cmd>qa<cr>')
-keyset('n', '<c-3>', '<cmd>wqa!<cr>')
+keyset({'n', 'i'}, '<c-3>', '<cmd>wqa!<cr>')
 keyset({'n', 'i'}, '<c-2>', '<cmd>wa<cr>')
 keyset({'n', 'i'}, '<c-1>', '<cmd>w<cr>')
 
